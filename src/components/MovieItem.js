@@ -24,11 +24,12 @@ const MovieItem = ({ movie, isFavorite, onToggleFavorite, onViewDetails }) => {
                 </div>
             </div>
 
-            <div style={{ marginTop: '8px' }}>
+            {/* Buttons aligned to the right, fully monochrome */}
+            <div className="d-flex justify-content-end gap-2" style={{ marginTop: '8px' }}>
                 <button
                     type="button"
-                    className={`btn btn-sm ${isFavorite ? 'btn-danger' : 'btn-outline-dark'}`}
-                    style={{ borderRadius: 0, padding: '2px 8px', fontSize: '13px', marginRight: '6px' }}
+                    className={`btn btn-sm ${isFavorite ? 'btn-dark' : 'btn-outline-dark'}`}
+                    style={{ borderRadius: 0, padding: '2px 8px', fontSize: '13px' }}
                     onClick={() => onToggleFavorite(id)}
                     aria-label={isFavorite ? 'Unfavorite' : 'Favorite'}
                 >
@@ -37,7 +38,7 @@ const MovieItem = ({ movie, isFavorite, onToggleFavorite, onViewDetails }) => {
 
                 <button
                     type="button"
-                    className="btn btn-outline-primary btn-sm"
+                    className="btn btn-outline-dark btn-sm"
                     style={{ borderRadius: 0, padding: '2px 8px', fontSize: '13px' }}
                     onClick={() => onViewDetails(movie)}
                     aria-label={`View Details for ${title}`}
